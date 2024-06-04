@@ -11,7 +11,37 @@
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
   <!-- TODO #1 - Use a loop to display job results in a table. -->
+  <table th:each="job : ${jobs}" class="job-listing">
+      <tr>
+        <th>ID</th>
+        <td th:text="${job.id}"></td>
+          <!-- Table body section with Thymeleaf each loop to iterate over jobs -->
+          <!-- th:each="job : ${jobs}" iterates over the jobs list, assigning each job to the variable "job" -->
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td th:text="${job.name}"></td>
+          <!-- Table data cell displaying the job name -->
+          <!-- th:text="${job.name}" sets the text content of the cell to the job's name repeat for employer, location, position, and competency-->
 
+      </tr>
+      <tr>
+        <td>Employer:</td>
+        <td th:text="${job.employer}"></td>
+      </tr>
+      <tr>
+        <td>Location:</td>
+        <td th:text="${job.location}"></td>
+      </tr>
+      <tr>
+        <td>Position Type:</td>
+        <td th:text="${job.positionType}"></td>
+      </tr>
+      <tr>
+        <td>Core Competency:</td>
+        <td th:text="${job.coreCompetency}"></td>
+      </tr>
+  </table>
 </div>
 
 </body>
